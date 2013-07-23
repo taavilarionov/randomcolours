@@ -1,1 +1,35 @@
-Random Colours by Taavi Larionov
+<!-- 
+Random Colours by Taavi Larionov 
+taavilarionov@gmail.com
+ver 1.0
+-->
+
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Random colours</title>
+	<script src="http:////ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+
+	<script>
+		jQuery(window).load(function(){
+
+			var x=Math.floor((Math.random()*256)+0);
+			var y=Math.floor((Math.random()*256)+0);
+			var z=Math.floor((Math.random()*256)+0);
+			
+			var element = document.getElementById('paintme');
+			element.style.background = 'rgb(' + x + ',' + y + ',' + z + ')';
+
+			document.body.style.backgroundColor = 'rgb(' + x + ',' + y + ',' + z + ')';
+
+			console.log(x, y, z);
+
+		});
+	</script>
+</head>
+<body>
+	<p class="i_want_colour">Radom Colour Generator will generate random colours as rgb(x, y, z) <span id="paintme" style="width: 15px; height: 15px; display: block; border: solid 1px #000; background: red;"></span></p>
+	<input type="button" value="Generate another totally random color" onClick="document.location.reload(true)">
+</body>
+</html>
